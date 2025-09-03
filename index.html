@@ -11,28 +11,23 @@
   <body>
   </body>
   <script>
+    // Initialize jsPsych instance
     var jsPsych = initJsPsych({
         on_finish: function(){
             jsPsych.data.displayData();
-        }}
-    );
+        }
+    });
+
+    // Create timeline
     var timeline = [];
 
-    var welcome = {
+    // Welcome trial
+    timeline.push({
         type: jsPsych.plugins.htmlKeyboardResponse,
-        stimulus: 'Welcome! You need to test the microphone first.',
-    };
-    timeline.push(welcome);
-    
+        stimulus: 'Welcome! You need to test the microphone first.'
+    });
 
-
+    // Run experiment
     jsPsych.run(timeline);
-    
-
-    
-
-
-
-    
   </script>
 </html>
